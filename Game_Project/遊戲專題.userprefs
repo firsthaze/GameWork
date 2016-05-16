@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\terrritoy_mouse_ver2.cs">
+    <Files>
+      <File FileName="Assets\script\terrritoy_mouse_ver2.cs" Line="15" Column="1" />
+      <File FileName="Assets\script\mana.cs" Line="18" Column="41" />
+      <File FileName="Assets\script\dice.cs" Line="18" Column="1" />
+      <File FileName="Assets\script\territory_Click.cs" Line="18" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

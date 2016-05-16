@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}</ProjectGuid>
+    <ProjectGuid>{4B1114E5-BD22-60DE-F13B-E59475A853C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,11 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\cardsystem.cs" />
+     <Compile Include="Assets\script\count_hp.cs" />
      <Compile Include="Assets\script\dice.cs" />
+     <Compile Include="Assets\script\end_phase.cs" />
      <Compile Include="Assets\script\maincam.cs" />
      <Compile Include="Assets\script\mana.cs" />
+     <Compile Include="Assets\script\record_coordinate.cs" />
      <Compile Include="Assets\script\territory_Click.cs" />
      <Compile Include="Assets\script\terrritoy_mouse_ver2.cs" />
+     <Compile Include="Assets\script\tower_create.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

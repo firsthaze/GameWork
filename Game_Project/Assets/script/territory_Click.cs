@@ -14,8 +14,13 @@ public class territory_Click : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		if(dice.sum>=2)
-			dice.sum = dice.sum - 2;
 		territory_isClick = true;
+		if (dice.sum <= 1) {
+			territory_isClick = false;
+			Cursor.visible = true;
+		}
+		else	
+		dice.sum = dice.sum - 2;
+
 	}
 }

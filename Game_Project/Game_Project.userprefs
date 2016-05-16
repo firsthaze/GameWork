@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\cardsystem.cs">
+    <Files>
+      <File FileName="Assets\script\cardsystem.cs" Line="10" Column="2" />
+      <File FileName="Assets\script\count_hp.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\end_phase.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\terrritoy_mouse_ver2.cs" Line="3" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9EB95088-14E8-BD20-8692-DB848C9A61AF}") = "遊戲專題", "Assembly-CSharp.csproj", "{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6408FF8E-D5AD-AB8E-2FAE-847BF8849E67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
