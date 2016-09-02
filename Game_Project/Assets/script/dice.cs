@@ -22,13 +22,10 @@ public class dice : MonoBehaviour {
 		}
 	}
 
-	public void OnClick()
+	public void throwdice()
 	{
-		if (end_phase.phase_check == 1) {
 			mana_f = Random.Range (1.0f, 7.0f);
 			mana_i = (int)mana_f;
 			sum = sum + mana_i;
-			end_phase.phase_check = 2;
-		}
 	}
 }

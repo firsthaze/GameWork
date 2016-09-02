@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4bebffa0ed214524aafa3a5852e584cc
+timeCreated: 1468566326
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - summor_Monster: {fileID: 161340, guid: aaac350d3fe512a4588be893fb085353, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
