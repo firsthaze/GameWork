@@ -3,8 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class record_coordinate : MonoBehaviour {
-	public int[] coordinate_x = new int[90];
-	public int[] coordintae_z = new int[90];
 	private Vector3 coordinateposition;
 	private int _coordinate_x,_coordinate_y,_coordinate_z;
 	// Use this for initialization
@@ -23,10 +21,12 @@ public class record_coordinate : MonoBehaviour {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
-				cor_process (hit.transform.position.x);
-				cor_process (hit.transform.position.z);
-				Debug.Log (cor_process (hit.transform.position.x));
-				Debug.Log (cor_process (hit.transform.position.z));
+				if (hit.transform.tag == "coordinate") {
+					cor_process (hit.transform.position.x);
+					cor_process (hit.transform.position.z);
+					Debug.Log ("X :" + cor_process (hit.transform.position.x));
+					Debug.Log ("Y :" + cor_process (hit.transform.position.z));
+				}
 			}
 		}
 	}

@@ -34,7 +34,6 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 
 	}
 
-
 	public void OnDrag( PointerEventData eventdata ){
 		eventsystems = GameObject.FindGameObjectWithTag("eventsystem");
 		this.transform.position = eventdata.position;
@@ -71,6 +70,10 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 					dice.sum = dice.sum - this.GetComponent<card_attribute> ().cost;
 					v3_position = new Vector3 (hit.transform.position.x + 0.08f, hit.transform.position.y + 6.8f, hit.transform.position.z);
 					summor_Monster = Instantiate (summor_Monster, v3_position, Quaternion.identity) as GameObject;
+					summor_Monster.GetComponent<recordWhichCard> ().cardNum = this.GetComponent<card_attribute> ().cardNum;
+					summor_Monster.GetComponent<recordWhichCard> ().HP = this.GetComponent<card_attribute> ().HP;
+					summor_Monster.GetComponent<recordWhichCard> ().ATK = this.GetComponent<card_attribute> ().ATK;
+					summor_Monster.GetComponent<recordWhichCard> ().Cost = this.GetComponent<card_attribute> ().cost;
 					this.gameObject.SetActive (false);
 				    } 
 				else {

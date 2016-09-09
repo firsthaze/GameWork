@@ -12,9 +12,11 @@ public class DrawCard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Cards = new List<GameObject> ();
 		Cards.Add (kaku);
 		Cards.Add (johnson);
 		Cards.Add (shashow);
+		Debug.Log ("finish cards");
 		setcardnum ();
 	}
 

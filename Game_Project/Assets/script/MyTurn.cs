@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(DrawCard))]
 public class MyTurn : MonoBehaviour {
 	List<int> cardIdList;
 	public GameObject controller;
@@ -13,16 +14,20 @@ public class MyTurn : MonoBehaviour {
 	DrawCard drawCard;
 
 	public void GetCards(){
+		Debug.Log ("In to GetCards");
 		foreach (int i in cardIdList) {
+			Debug.Log ("In to cardIdList");
 			foreach (GameObject j in drawCard.Cards) {
+				Debug.Log ("In to drawCard.Cards");
 				if (i == j.GetComponent<card_attribute> ().cardNum) {
-					Debug.Log ("get cardnum :" + j.GetComponent<card_attribute> ().cardNum);
+					Debug.Log ("find the cards to draw");
 					if (cardParent_refrence.transform.parent.childCount <= 6) {
 						cardPrefab = j;
 						GameObject cardCopy = (GameObject)Instantiate (cardPrefab);
 						cardCopy.transform.SetParent (parent);
 						cardCopy.GetComponent<RectTransform> ().localScale = new Vector3 (1f, 1f, 1f);
 						cardCopy.transform.SetSiblingIndex (this.transform.GetSiblingIndex ());
+						Debug.Log ("finish  GetCards");
 						break;
 					} else {
 						Debug.Log ("手牌已滿");
@@ -43,29 +48,27 @@ public class MyTurn : MonoBehaviour {
 		drawCard = GetComponent<DrawCard> ();
 		Shuffle ();
 		parent = cardParent_refrence.transform.parent;
+		checkMyTurn ();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		checkMyTurn ();
 	}
 
-	void checkMyTurn(){
-		if (controller.GetComponent<end_phase> ().ismyturn == true) {
-			Debug.Log ("進入MyTurn");
-			drawcard();
+	public void checkMyTurn(){
+		    Debug.Log ("In to checkMyTurn");
+			todrawcard();
 			this.GetComponent<dice>().throwdice ();
-		}
 	}
 		
-	void drawcard(){
+	void todrawcard(){
+		Debug.Log ("In to todrawcard");
 		if (cardIdList.Count == 0) {
 			Debug.Log ("沒手牌了");
 		} else {
 			GetCards ();
 		}
-		controller.GetComponent<end_phase> ().ismyturn = false;
 	}
 
 	public void Shuffle(){
@@ -76,7 +79,7 @@ public class MyTurn : MonoBehaviour {
 			cardIdList.Clear ();
 		}
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i <= 3; i++) {
 			cardIdList.Add (i);
 		}
 
