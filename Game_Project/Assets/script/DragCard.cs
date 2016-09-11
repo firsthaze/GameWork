@@ -13,7 +13,7 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 	public Transform parentToReturnTo = null;
 	GameObject placeholder = null;
 	public bool isextand = true;
-	GameObject eventsystems;
+	GameObject eventSystems;
 
 	public void OnBeginDrag( PointerEventData eventdata ){
 		placeholder = new GameObject ();
@@ -35,7 +35,7 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 	}
 
 	public void OnDrag( PointerEventData eventdata ){
-		eventsystems = GameObject.FindGameObjectWithTag("eventsystem");
+		eventSystems = GameObject.FindGameObjectWithTag("eventsystem");
 		this.transform.position = eventdata.position;
 		//int newSiblingIndex = parentToReturnTo.transform.childCount;
 
@@ -49,7 +49,7 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 				break;
 			}
 		}*/
-			eventsystems.GetComponent<controllHand> ().shrink ();
+			eventSystems.GetComponent<controllHand> ().shrink ();
 		
 
 		//placeholder.transform.SetSiblingIndex (newSiblingIndex);
@@ -59,7 +59,7 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 
 	public void OnEndDrag( PointerEventData eventdata ){
 		Destroy (placeholder);
-		eventsystems.GetComponent<controllHand> ().expansion();
+		eventSystems.GetComponent<controllHand> ().expansion();
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		this.transform.SetParent (parentToReturnTo);
 		RaycastHit hit;
@@ -78,12 +78,14 @@ public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHa
 				    } 
 				else {
 					Debug.Log ("Doesnt have enough Mana");
+					eventSystems.GetComponent<messageController> ().receiveMessage (4);
 					this.transform.SetParent (parentToReturnTo);
 					this.transform.SetSiblingIndex (placeholder.transform.GetSiblingIndex ());
 				    } 
 				 } 
 			else {
 				Debug.Log ("Dont click the altar");
+				eventSystems.GetComponent<messageController> ().receiveMessage (5);
 				this.transform.SetParent (parentToReturnTo);
 				this.transform.SetSiblingIndex (placeholder.transform.GetSiblingIndex ());
 				}

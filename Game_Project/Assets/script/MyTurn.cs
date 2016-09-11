@@ -5,29 +5,25 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(DrawCard))]
 public class MyTurn : MonoBehaviour {
-	List<int> cardIdList;
+	public List<int> cardIdList;
 	public GameObject controller;
 	public GameObject cardParent_refrence;
 	GameObject cardPrefab;
+	GameObject eventSystem;
 
 	Transform parent;
 	DrawCard drawCard;
 
 	public void GetCards(){
-		Debug.Log ("In to GetCards");
 		foreach (int i in cardIdList) {
-			Debug.Log ("In to cardIdList");
 			foreach (GameObject j in drawCard.Cards) {
-				Debug.Log ("In to drawCard.Cards");
 				if (i == j.GetComponent<card_attribute> ().cardNum) {
-					Debug.Log ("find the cards to draw");
 					if (cardParent_refrence.transform.parent.childCount <= 6) {
 						cardPrefab = j;
 						GameObject cardCopy = (GameObject)Instantiate (cardPrefab);
 						cardCopy.transform.SetParent (parent);
 						cardCopy.GetComponent<RectTransform> ().localScale = new Vector3 (1f, 1f, 1f);
 						cardCopy.transform.SetSiblingIndex (this.transform.GetSiblingIndex ());
-						Debug.Log ("finish  GetCards");
 						break;
 					} else {
 						Debug.Log ("手牌已滿");
@@ -45,10 +41,10 @@ public class MyTurn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
 		drawCard = GetComponent<DrawCard> ();
 		Shuffle ();
 		parent = cardParent_refrence.transform.parent;
-		checkMyTurn ();
 	}
 
 
@@ -57,13 +53,11 @@ public class MyTurn : MonoBehaviour {
 	}
 
 	public void checkMyTurn(){
-		    Debug.Log ("In to checkMyTurn");
-			todrawcard();
+		    todrawcard();
 			this.GetComponent<dice>().throwdice ();
 	}
 		
 	void todrawcard(){
-		Debug.Log ("In to todrawcard");
 		if (cardIdList.Count == 0) {
 			Debug.Log ("沒手牌了");
 		} else {

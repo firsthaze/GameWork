@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AI script\archerEnemy.cs" />
      <Compile Include="Assets\AI script\enemyAttribute.cs" />
      <Compile Include="Assets\AI script\fighterEnemy.cs" />
      <Compile Include="Assets\script\CardModel.cs" />
@@ -57,13 +58,13 @@
      <Compile Include="Assets\script\choicemode.cs" />
      <Compile Include="Assets\script\controllHand.cs" />
      <Compile Include="Assets\script\countLine.cs" />
-     <Compile Include="Assets\script\count_hp.cs" />
      <Compile Include="Assets\script\dice.cs" />
      <Compile Include="Assets\script\displayMonster.cs" />
      <Compile Include="Assets\script\end_phase.cs" />
      <Compile Include="Assets\script\enemy_phase.cs" />
      <Compile Include="Assets\script\maincam.cs" />
      <Compile Include="Assets\script\mana.cs" />
+     <Compile Include="Assets\script\messageController.cs" />
      <Compile Include="Assets\script\monster_create.cs" />
      <Compile Include="Assets\script\recordWhichCard.cs" />
      <Compile Include="Assets\script\record_coordinate.cs" />

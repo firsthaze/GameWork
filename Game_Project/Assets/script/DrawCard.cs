@@ -16,7 +16,6 @@ public class DrawCard : MonoBehaviour {
 		Cards.Add (kaku);
 		Cards.Add (johnson);
 		Cards.Add (shashow);
-		Debug.Log ("finish cards");
 		setcardnum ();
 	}
 

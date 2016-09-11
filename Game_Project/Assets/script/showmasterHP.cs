@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class showmasterHP : MonoBehaviour {
-	public int masterHP;
+	public static int masterHP;
 	public Text text;
 	// Use this for initialization
 	void Start () {
