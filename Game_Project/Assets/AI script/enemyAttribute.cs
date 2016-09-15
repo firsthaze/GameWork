@@ -11,6 +11,10 @@ public class enemyAttribute : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		checkHP ();
+	}
+	void checkHP(){
+		if (HP <= 0)
+			Destroy (this.gameObject);
 	}
 }

@@ -8,12 +8,13 @@ public class countLine : MonoBehaviour {
 	private int ourMonsterZ,enemyMonsterZ,ourMonsterAtk,enemyMonsterHp;
 	List<GameObject> target,canATK;
 	Renderer allowAtk;
-	GameObject[] findMonster;
 	// Use this for initialization
 	void Start () {
 		isATK = false;
 		minLine = 50;
 		minHP = 100;
+		target = new List<GameObject>();
+		canATK = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -28,13 +29,14 @@ public class countLine : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit)) {
 				if(!isATK){
 				if (hit.transform.tag == "ourMonster") {
+						target.Clear ();
+						canATK.Clear ();
 					    isATK = true;
 					    ourMonsterZ=cor_process (hit.transform.position.z);
 						ourMonsterAtk = hit.transform.GetComponent<recordWhichCard>().ATK;
 
-						findMonster = GameObject.FindGameObjectsWithTag ("enemyMonster");
 						//找尋全部敵人跟判斷最近的線位
-						foreach (GameObject enemyMonster in findMonster) {
+						foreach (GameObject enemyMonster in GameObject.FindGameObjectsWithTag ("enemyMonster")) {
 							target.Add (enemyMonster);
 							monsterDistance = (int)(enemyMonster.transform.position.z - this.transform.position.z);
 							if (minLine > monsterDistance) {
@@ -62,7 +64,8 @@ public class countLine : MonoBehaviour {
 					if (hit.transform.tag == "choosen") {
 						minLine = 50;
 						enemyMonsterZ=cor_process (hit.transform.position.z);
-						enemyMonsterHp =  hit.transform.GetComponent<enemyAttribute> ().HP;
+						hit.transform.GetComponent<enemyAttribute> ().HP =  hit.transform.GetComponent<enemyAttribute> ().HP - ourMonsterAtk;
+
 						foreach (GameObject toAtk in canATK) {
 							allowAtk = toAtk.GetComponent<Renderer> ();
 							allowAtk.material.color = Color.white;
@@ -70,6 +73,7 @@ public class countLine : MonoBehaviour {
 						}
 						isATK = false;
 						monsterDistance = enemyMonsterZ-ourMonsterZ;
+
 					}
 
 				}

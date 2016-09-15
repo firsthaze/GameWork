@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class archerEnemy : MonoBehaviour {
 	GameObject controller;
 	GameObject eventSystem;
+	Renderer allowAtk;
 	List<GameObject> target,canATK,goATK;
 	int countLine,minLine,minHP,n;
 	bool isActive;
@@ -53,7 +54,6 @@ public class archerEnemy : MonoBehaviour {
 			countLine = (int)(this.transform.position.z - atkTarget.GetComponent<Transform> ().position.z);
 			if ((minLine+1)>=countLine) {
 				canATK.Add (atkTarget);
-				Debug.Log ("找到了可以攻擊目標:" + atkTarget.transform.name);
 			}
 		}
 
@@ -69,18 +69,19 @@ public class archerEnemy : MonoBehaviour {
 			if (minHP == toATK.GetComponent<recordWhichCard> ().HP) {
 				minHP = toATK.GetComponent<recordWhichCard> ().HP;
 				goATK.Add (toATK);
-				Debug.Log ("攻擊目標 :" + toATK.transform.name);
 			}
 		}
 		if (goATK.Count != 0) {
+			allowAtk = goATK [0].GetComponent<Renderer> ();
+			allowAtk.material.color = Color.red;
 			goATK [0].GetComponent<recordWhichCard> ().HP = goATK [0].GetComponent<recordWhichCard> ().HP - this.GetComponent<enemyAttribute> ().ATK;
+			StartCoroutine (toWaite ());
 			controller.GetComponent<enemy_phase> ().isfinish++;
 			GetComponent<enemyAttribute> ().isActive = false;
 			minLine = 50;
 			minHP = 100;
 		}
 		else {
-			Debug.Log(this.transform.name + "has already attacked");
 			showmasterHP.masterHP = showmasterHP.masterHP - this.GetComponent<enemyAttribute> ().ATK;
 			eventSystem.GetComponent<messageController> ().receiveMessage (6);
 			controller.GetComponent<enemy_phase> ().isfinish++;
@@ -89,4 +90,9 @@ public class archerEnemy : MonoBehaviour {
 			minHP = 100;
 		}
 	}
+
+	IEnumerator toWaite(){
+		yield return new WaitForSeconds (1);
+		allowAtk.material.color = Color.white;
+	}	
 }

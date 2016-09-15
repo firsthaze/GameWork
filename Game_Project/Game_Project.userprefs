@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\countLine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dialog Script\sceneFade.cs">
     <Files>
-      <File FileName="Assets\AI script\archerEnemy.cs" Line="86" Column="55" />
-      <File FileName="Assets\AI script\fighterEnemy.cs" Line="17" Column="66" />
-      <File FileName="Assets\script\countLine.cs" Line="38" Column="1" />
-      <File FileName="Assets\script\enemy_phase.cs" Line="25" Column="34" />
-      <File FileName="Assets\script\MyTurn.cs" Line="60" Column="20" />
-      <File FileName="Assets\script\card_attribute.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\DrawCard.cs" Line="18" Column="23" />
-      <File FileName="Assets\script\showmasterHP.cs" Line="6" Column="16" />
+      <File FileName="Assets\Dialog Script\firstMovie.cs" Line="25" Column="30" />
+      <File FileName="Assets\Dialog Script\sceneFade.cs" Line="39" Column="32" />
+      <File FileName="Assets\Game Script\showEmperorHp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Level Script\controlLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\AI Script\enemyAttribute.cs" Line="1" Column="1" />
+      <File FileName="Assets\AI Script\archerEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\AI Script\fighterEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Script\countLine.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
