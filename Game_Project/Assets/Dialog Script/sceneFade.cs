@@ -37,7 +37,7 @@ public class sceneFade : MonoBehaviour {
 	public IEnumerator FadeOut(){
 		Debug.Log ("進入FadeOut");
 		while (this.fadeColor.a < 0.9) {
-			this.fadeColor.a += Time.deltaTime * this.fadeInSpeed*0.5f;
+			this.fadeColor.a += Time.deltaTime * this.fadeInSpeed*0.8f;
 			yield return null;
 		}
 		this.fadeColor.a = 1;

@@ -20,7 +20,7 @@ public class firstMovie : MonoBehaviour {
 
 	IEnumerator OnMouseDown(){
 		StartCoroutine(sceneFade.GetComponent<sceneFade> ().FadeOut ());
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (1);
 		if (screen > 3) {
 			Application.LoadLevel (0);
 		} else {
@@ -37,7 +37,7 @@ public class firstMovie : MonoBehaviour {
 			screen++;
 			break;
 		case 1:
-			dialog.text = "這是洛克亞大陸上，吟遊詩人四處傳唱的歌謠，各地的小朋友都會不時地哼個一兩句";
+			dialog.text = "這是洛克亞大陸上，吟遊詩人四處傳唱的歌謠，各地的小朋友都會不時地哼著";
 			screen++;
 			break;
 		case 2:

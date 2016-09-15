@@ -48,6 +48,7 @@
      <Compile Include="Assets\AI Script\archerEnemy.cs" />
      <Compile Include="Assets\AI Script\enemyAttribute.cs" />
      <Compile Include="Assets\AI Script\fighterEnemy.cs" />
+     <Compile Include="Assets\Dialog Script\firstChapterInDialog.cs" />
      <Compile Include="Assets\Dialog Script\firstMovie.cs" />
      <Compile Include="Assets\Dialog Script\sceneFade.cs" />
      <Compile Include="Assets\Game Script\CardModel.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Level Script\controlLevel.cs" />
      <Compile Include="Assets\Level Script\level1.cs" />
      <Compile Include="Assets\Level Script\level2.cs" />
+     <Compile Include="Assets\Level Script\startView.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
