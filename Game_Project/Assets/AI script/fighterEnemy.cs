@@ -88,6 +88,7 @@ public class fighterEnemy : MonoBehaviour {
 			    minLine = 50;
 			    minHP = 100;
 			}
+		Debug.Log ("Archer攻擊完了");
 	}
 
 	IEnumerator toWaite(){

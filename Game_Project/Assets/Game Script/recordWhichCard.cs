@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class recordWhichCard : MonoBehaviour{
-	public int HP, ATK,Cost,cardNum;
+	public int HP, ATK,Cost,cardNum,atkChance;
 	//TODO:記錄這個物件是哪一張牌
 	void Update(){
 		checkHP ();

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/dialogscene.unity
+- path: Assets/Scene/firstLevel.unity
   isLoaded: 1
   isActive: 1

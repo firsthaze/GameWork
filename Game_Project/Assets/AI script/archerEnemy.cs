@@ -71,6 +71,7 @@ public class archerEnemy : MonoBehaviour {
 				goATK.Add (toATK);
 			}
 		}
+
 		if (goATK.Count != 0) {
 			allowAtk = goATK [0].GetComponent<Renderer> ();
 			allowAtk.material.color = Color.red;
@@ -89,6 +90,8 @@ public class archerEnemy : MonoBehaviour {
 			minLine = 50;
 			minHP = 100;
 		}
+
+		Debug.Log ("Archer攻擊完了");
 	}
 
 	IEnumerator toWaite(){

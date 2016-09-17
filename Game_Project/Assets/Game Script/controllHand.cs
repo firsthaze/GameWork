@@ -24,7 +24,7 @@ public class controllHand : MonoBehaviour {
 		float newx = -1150f;
 		Vector2 outposition = new Vector2 (newx, Hand.anchoredPosition.y);
 		Hand.anchoredPosition = outposition;
-		text.text = "展開";
+		text.text = "攤 開";
 	}
 
 	public void expansion(){
@@ -32,7 +32,7 @@ public class controllHand : MonoBehaviour {
 		float newx = 0f;
 		Vector2 outposition = new Vector2 (newx, Hand.anchoredPosition.y);
 		Hand.anchoredPosition = outposition;
-		text.text = "收縮";
+		text.text = "捲 起";
 	}
 		
 	

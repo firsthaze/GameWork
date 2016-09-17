@@ -14,7 +14,11 @@ public class enemyAttribute : MonoBehaviour {
 		checkHP ();
 	}
 	void checkHP(){
-		if (HP <= 0)
-			Destroy (this.gameObject);
+		if (HP <= 0) {
+			if (this.gameObject.transform.name == "Emperor")
+				HP = 0;
+			else
+				Destroy (this.gameObject);
+		}
 	}
 }
