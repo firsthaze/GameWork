@@ -16,7 +16,7 @@ public class teachScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		pageDisplay.text = page + " / 8" ;
+		pageDisplay.text = page + " / 9" ;
 	}
 
 	void ShowTeachContext(int changeContext){
@@ -43,11 +43,13 @@ public class teachScript : MonoBehaviour {
 			teachContext.text = "線位就是指該兵棋與敵方目標之前是否有其他敵方單位，如果沒有，就是1線，若有，則算是第2線，附帶一提，同一列都算是同一線喔!";
 			break;
 		case 7:
-			teachContext.text = "可以來說說職業特性啦，目前呢，有三種兵職，分別為:  Saber、Assasin和Archer，Saber的特性是每次攻擊成功，攻擊力都會上升一點，Assasin是第一次攻擊時會造成兩倍傷害，" +
-				"Archer則是可以越1個線位攻擊!";
-			nextButton.SetActive (true);
+			teachContext.text = "可以來說說職業特性啦，目前呢，有三種兵職，分別為:  Saber、Assasin 和 Archer ! ";
 			break;
 		case 8:
+			teachContext.text = "Saber的特性是每次攻擊成功，攻擊力都會上升一點，   Assasin是第一次攻擊時會造成兩倍傷害，             Archer則是可以越1個線位攻擊!";
+			nextButton.SetActive (true);
+			break;
+		case 9:
 			teachContext.text = "沒有看仔細的話記得再往前看喔，關掉之後就看不到囉~咖酷的說明就到此結束，咖酷下台一鞠躬!";
 			nextButton.SetActive (false);
 			break;

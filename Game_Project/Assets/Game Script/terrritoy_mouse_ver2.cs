@@ -10,6 +10,7 @@ public class terrritoy_mouse_ver2 : MonoBehaviour {
 	public Vector3 v3_position;
 	private bool flag;     //不能連續點擊的開關
 	private bool _isexist; //不能同地點建造的開關
+	GameObject newcreate_tower;
 
 
 
@@ -45,7 +46,7 @@ public class terrritoy_mouse_ver2 : MonoBehaviour {
 					else {
 						Cursor.visible = true;
 						v3_position = new Vector3 (hit.transform.position.x + 0.7f, hit.transform.position.y - 0.1f, hit.transform.position.z + 0.2f);
-						create_tower = Instantiate (create_tower, v3_position, Quaternion.identity) as GameObject;
+						newcreate_tower = Instantiate (create_tower, v3_position, Quaternion.identity) as GameObject;
 						go.GetComponent<territory_Click> ().territory_isClick = false;
 					}
 				}

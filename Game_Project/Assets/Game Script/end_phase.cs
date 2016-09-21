@@ -25,6 +25,8 @@ public class end_phase : MonoBehaviour {
     }
 
 	public IEnumerator OnClickToDo(){
+		buttonEndPhase.GetComponent<Button> ().interactable = false;
+		territoryButton.GetComponent<Button> ().interactable = false;
 		if (eventSystem.GetComponent<MyTurn> ().cardIdList.Count == 0) {
 			eventSystem.GetComponent<messageController> ().receiveMessage (3);
 			yield return new WaitForSeconds (2);
@@ -33,7 +35,5 @@ public class end_phase : MonoBehaviour {
 		ismyturn = false;
 		eventSystem.GetComponent<MyTurn> ().checkMyTurn ();
 		GetComponent<enemy_phase> ().checkMyTurn ();
-		buttonEndPhase.GetComponent<Button> ().interactable = false;
-		territoryButton.GetComponent<Button> ().interactable = false;
 	}
 }
