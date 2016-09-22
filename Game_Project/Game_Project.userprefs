@@ -1,13 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dialog Script\backToUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ContractScript\changePicture.cs">
     <Files>
-      <File FileName="Assets\Dialog Script\backToUI.cs" Line="24" Column="35" />
-      <File FileName="Assets\Game Script\startGame.cs" Line="24" Column="25" />
-      <File FileName="Assets\SocketIO\Scripts\SocketIO\test.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog Script\victory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog Script\teachScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Level Script\startView.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Script\DisplayCard.cs" Line="31" Column="87" />
+      <File FileName="Assets\ContractScript\changePicture.cs" Line="116" Column="38" />
+      <File FileName="Assets\ContractScript\reelControl.cs" Line="28" Column="32" />
+      <File FileName="Assets\ContractScript\chooseReel.cs" Line="21" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
