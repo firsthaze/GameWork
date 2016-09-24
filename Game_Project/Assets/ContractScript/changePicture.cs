@@ -25,7 +25,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 10;
 			hp.text = "" + 6;
 			atk.text = "" + 6;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -36,7 +36,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 4;
 			hp.text = "" + 4;
 			atk.text = "" + 2;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -47,7 +47,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 3;
 			hp.text = "" + 3;
 			atk.text = "" + 4;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -58,7 +58,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 8;
 			hp.text = "" + 8;
 			atk.text = "" + 8;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -69,7 +69,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 5;
 			hp.text = "" + 3;
 			atk.text = "" + 4;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -80,7 +80,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 3;
 			hp.text = "" + 2;
 			atk.text = "" + 5;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -91,7 +91,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 4;
 			hp.text = "" + 4;
 			atk.text = "" + 2;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -102,7 +102,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 1;
 			hp.text = "" + 3;
 			atk.text = "" + 3;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber++;
 			StartCoroutine( changeCharacter ());
@@ -113,7 +113,7 @@ public class changePicture : MonoBehaviour {
 			cost.text = "" + 4;
 			hp.text = "" + 3;
 			atk.text = "" + 4;
-			yield return new WaitForSeconds (4);
+			yield return new WaitForSeconds (3);
 			toActivePicture [cardNumber].SetActive (false);
 			cardNumber = 0;
 			StartCoroutine( changeCharacter ());

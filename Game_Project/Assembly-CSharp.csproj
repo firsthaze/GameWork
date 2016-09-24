@@ -50,6 +50,7 @@
      <Compile Include="Assets\AI Script\fighterEnemy.cs" />
      <Compile Include="Assets\ContractScript\changePicture.cs" />
      <Compile Include="Assets\ContractScript\chooseReel.cs" />
+     <Compile Include="Assets\ContractScript\clickContractCard.cs" />
      <Compile Include="Assets\ContractScript\reelControl.cs" />
      <Compile Include="Assets\Dialog Script\backToUI.cs" />
      <Compile Include="Assets\Dialog Script\finishReward.cs" />
