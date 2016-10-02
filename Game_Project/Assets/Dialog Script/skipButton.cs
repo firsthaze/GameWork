@@ -14,6 +14,6 @@ public class skipButton : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		Application.LoadLevel (loadlevel);
+		SceneLoader.ins.LoadLevel(SceneLoader.Scenes.firstLevel);
 	}
 }

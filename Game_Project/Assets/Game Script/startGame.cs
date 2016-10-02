@@ -22,6 +22,6 @@ public class startGame : MonoBehaviour {
 
 	void OnMouseDown() {
 		user.Emit ("login", newUser);
-		Application.LoadLevel (6);
+		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
 	}
 }

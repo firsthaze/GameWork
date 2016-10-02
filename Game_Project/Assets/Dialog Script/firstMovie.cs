@@ -10,6 +10,7 @@ public class firstMovie : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		sceneFade = GameObject.Find ("SceneFade");
 		screen = 0;
 		ShowStory (screen);
@@ -26,7 +27,7 @@ public class firstMovie : MonoBehaviour
 		StartCoroutine (sceneFade.GetComponent<sceneFade> ().FadeOut ());
 		yield return new WaitForSeconds (1);
 		if (screen > 3) {
-			Application.LoadLevel (3);
+			SceneLoader.ins.LoadLevel(SceneLoader.Scenes.chapter1Dialog);
 		} else {
 			StartCoroutine (sceneFade.GetComponent<sceneFade> ().FadeIn ());
 			ShowStory (screen);

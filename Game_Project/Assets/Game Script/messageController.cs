@@ -42,19 +42,19 @@ public class messageController : MonoBehaviour {
 			StartCoroutine (changeMessage ());
 			break;
 		case 3:
-			tmp = "Master沒有手牌囉!";
+			tmp = "Master沒有手牌囉 !";
 			StartCoroutine (changeMessage ());
 			break;
 		case 4:
-			tmp = "Master需要更多的    Mana!。";
+			tmp = "Master需要更多的    Mana !";
 			StartCoroutine (changeMessage ());
 			break;
 		case 5:
-			tmp = "Master沒有放到祭壇上喔!";
+			tmp = "Master沒有放到祭壇上喔 !";
 			StartCoroutine (changeMessage ());
 			break;
 		case 6:
-			tmp = "Master正受到攻擊!請盡快建立防線!";
+			tmp = "Master正受到攻擊!請盡快建立防線 !";
 			StartCoroutine (changeMessage ());
 			break;
 		case 7:

@@ -4,12 +4,12 @@ using SocketIO;
 public class backToUI : MonoBehaviour {
 	private string token;
 	JSONObject newUser;
-	public GameObject socket;
+	GameObject socket;
 	SocketIOComponent user;
 	// Use this for initialization
 	void Start () {
+		socket = GameObject.FindGameObjectWithTag ("socket");
 		user = socket.GetComponent<SocketIOComponent> ();
-		DontDestroyOnLoad (socket);
 		token = SystemInfo.deviceUniqueIdentifier;
 		newUser = new JSONObject ();
 		newUser.AddField ("token", token);

@@ -29,6 +29,7 @@ public class reelControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		user.On("returnCardNumber", getCardNumber);
 		if (isShowCard) {
 			if (showCard.transform.position.y  > 200) {
 				showCard.transform.position = new Vector3 (showCard.transform.position.x, showCard.transform.position.y - speed * Time.deltaTime, showCard.transform.position.z);
@@ -57,7 +58,6 @@ public class reelControl : MonoBehaviour {
 
 	void goContract(){
 		user.Emit ("Contract", userID);
-		user.On("returnCardNumber", getCardNumber);
 	}
 
 	public void getCardNumber(SocketIOEvent e)

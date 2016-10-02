@@ -60,6 +60,10 @@
      <Compile Include="Assets\Dialog Script\skipButton.cs" />
      <Compile Include="Assets\Dialog Script\teachScript.cs" />
      <Compile Include="Assets\Dialog Script\victory.cs" />
+     <Compile Include="Assets\EditScript\ClickFinish.cs" />
+     <Compile Include="Assets\EditScript\EditCard.cs" />
+     <Compile Include="Assets\EditScript\Index.cs" />
+     <Compile Include="Assets\EditScript\ScrollCard.cs" />
      <Compile Include="Assets\Game Script\CardModel.cs" />
      <Compile Include="Assets\Game Script\DisplayCard.cs" />
      <Compile Include="Assets\Game Script\DragCard.cs" />
@@ -86,10 +90,18 @@
      <Compile Include="Assets\Game Script\territory_Click.cs" />
      <Compile Include="Assets\Game Script\terrritoy_mouse_ver2.cs" />
      <Compile Include="Assets\Game Script\tower_create.cs" />
+     <Compile Include="Assets\Level Script\checkLevel.cs" />
+     <Compile Include="Assets\Level Script\checkUserInfo.cs" />
      <Compile Include="Assets\Level Script\controlLevel.cs" />
      <Compile Include="Assets\Level Script\level1.cs" />
      <Compile Include="Assets\Level Script\level2.cs" />
      <Compile Include="Assets\Level Script\startView.cs" />
+     <Compile Include="Assets\Settings\LoadingScene.cs" />
+     <Compile Include="Assets\Settings\SceneInitializer.cs" />
+     <Compile Include="Assets\Settings\SceneLoader.cs" />
+     <Compile Include="Assets\Settings\SceneManager.cs" />
+     <Compile Include="Assets\Settings\SceneNames.cs" />
+     <Compile Include="Assets\Settings\turnLoad.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\JSONTemplates.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\VectorTemplates.cs" />
@@ -171,6 +183,7 @@
      <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketFrame.cs" />
      <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketState.cs" />
      <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketStream.cs" />
+     <Compile Include="Assets\UnityPackages\JsonNetSample\JsonNetSample.cs" />
      <None Include="Assets\SocketIO\JSONObject\readme.txt" />
      <None Include="Assets\SocketIO\Readme.txt" />
  <Reference Include="UnityEngine.UI">
@@ -178,6 +191,12 @@
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Firsthaze/Desktop/project_game/Game_Project/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Firsthaze/Desktop/project_game/Game_Project/Assets/UnityPackages/JsonNet-Lite/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

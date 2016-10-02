@@ -13,6 +13,7 @@ public class clickContractCard : MonoBehaviour {
 	public float speed;
 	private int mode;
 	private int cardNum;
+	Transform scenefade;
 	// Use this for initialization
 	void Start () {
 		turn = false;
@@ -32,6 +33,8 @@ public class clickContractCard : MonoBehaviour {
 				cardBack.SetActive (false);
 				turnRight = true;
 				turn = false;
+				scenefade = card [cardNum].transform.GetChild (10);
+				scenefade.gameObject.SetActive (false);
 			}
 		}
 
