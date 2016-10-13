@@ -6,9 +6,11 @@ public class backToUI : MonoBehaviour {
 	JSONObject newUser;
 	GameObject socket;
 	SocketIOComponent user;
+	GameObject openlevel;
 	// Use this for initialization
 	void Start () {
-		socket = GameObject.FindGameObjectWithTag ("socket");
+		openlevel = GameObject.Find ("LevelPassAndControll");
+		socket = GameObject.FindGameObjectWithTag ("Socket");
 		user = socket.GetComponent<SocketIOComponent> ();
 		token = SystemInfo.deviceUniqueIdentifier;
 		newUser = new JSONObject ();
@@ -22,11 +24,11 @@ public class backToUI : MonoBehaviour {
 
 	void OnMouseDown(){
 		user.Emit ("GetStone", newUser);
-		StartCoroutine (goToUI ());
+		goToUI ();
 	}
 
-	IEnumerator goToUI(){
-		yield return  new WaitForSeconds (1);
-		Application.LoadLevel (5);
+    void goToUI(){
+		openlevel.GetComponent<levelController> ().isOpen = true;
+		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
 	}
 }

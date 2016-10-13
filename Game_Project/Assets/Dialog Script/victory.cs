@@ -3,6 +3,7 @@ using System.Collections;
 
 public class victory : MonoBehaviour {
 	public GameObject victoryPicture;
+	public GameObject defeatPicture;
 	// Use this for initialization
 	void Start () {
 		victoryPicture.SetActive (false);
@@ -16,6 +17,12 @@ public class victory : MonoBehaviour {
 	public IEnumerator victoryBoard(){
 		victoryPicture.SetActive (true);
 		yield return new WaitForSeconds (2);
-		Application.LoadLevel (4);
+		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.finishScene);
+	}
+
+	public IEnumerator defeatBoard(){
+		defeatPicture.SetActive (true);
+		yield return new WaitForSeconds (2);
+		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
 	}
 }

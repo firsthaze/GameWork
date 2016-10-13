@@ -7,6 +7,7 @@ public class end_phase : MonoBehaviour {
 	GameObject eventSystem;
 	GameObject buttonEndPhase;
 	GameObject territoryButton;
+	Renderer finishActive;
 	// Use this for initialization
 	void Start () {
 		ismyturn = true;
@@ -21,16 +22,16 @@ public class end_phase : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		StartCoroutine (OnClickToDo ());
+		OnClickToDo ();
     }
 
-	public IEnumerator OnClickToDo(){
+	public void OnClickToDo(){
+		foreach (GameObject Monster in GameObject.FindGameObjectsWithTag ("ourMonster")){
+			finishActive = Monster.GetComponent<Renderer> ();
+			finishActive.material.color = Color.gray;
+		}
 		buttonEndPhase.GetComponent<Button> ().interactable = false;
 		territoryButton.GetComponent<Button> ().interactable = false;
-		if (eventSystem.GetComponent<MyTurn> ().cardIdList.Count == 0) {
-			eventSystem.GetComponent<messageController> ().receiveMessage (3);
-			yield return new WaitForSeconds (2);
-		} 
 		eventSystem.GetComponent<messageController> ().receiveMessage (2);
 		ismyturn = false;
 		eventSystem.GetComponent<MyTurn> ().checkMyTurn ();

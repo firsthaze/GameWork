@@ -55,6 +55,7 @@ public class fighterEnemy : MonoBehaviour {
 			}
 
 		    foreach (GameObject toATK in canATK) {
+			Debug.Log ("toATK is : " + toATK);
 			    if (minHP >= toATK.GetComponent<recordWhichCard> ().HP) {
 				minHP = toATK.GetComponent<recordWhichCard> ().HP;
 			    }
@@ -88,11 +89,11 @@ public class fighterEnemy : MonoBehaviour {
 			    minLine = 50;
 			    minHP = 100;
 			}
-		Debug.Log ("Archer攻擊完了");
+		Debug.Log ("fighter攻擊完了");
 	}
 
 	IEnumerator toWaite(){
 		yield return new WaitForSeconds (1);
-		allowAtk.material.color = Color.white;
+		allowAtk.material.color = Color.gray;
 	}	
 }

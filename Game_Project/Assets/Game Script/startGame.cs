@@ -18,10 +18,17 @@ public class startGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		user.On ("isExist", GoToWhere);
 	}
 
 	void OnMouseDown() {
 		user.Emit ("login", newUser);
-		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
+	}
+
+	void GoToWhere(SocketIOEvent e){
+		if (!e.data ["isExist"].b)
+			SceneLoader.ins.LoadLevel (SceneLoader.Scenes.firstMovieScene);
+		else if(e.data ["isExist"].b)
+			SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
 	}
 }

@@ -13,8 +13,10 @@ public class ScrollCard : MonoBehaviour {
 	private int minCardNum;
 
 	void Start(){
+		foreach (GameObject card in Cards) {
+			card.GetComponent<DragCard> ().enabled = false;
+		}		
 		int cardLength = Cards.Length;
-		Debug.Log ("Show cardLength is :" + cardLength);
 		distance = new float[cardLength];
 
 		cardDistance = (int)Mathf.Abs (Cards [1].GetComponent<RectTransform> ().anchoredPosition.x - Cards [0].GetComponent<RectTransform> ().anchoredPosition.x);

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(DrawCard))]
 public class MyTurn : MonoBehaviour {
 	public List<int> cardIdList;
 	public GameObject controller;
@@ -14,9 +13,9 @@ public class MyTurn : MonoBehaviour {
 	Transform parent;
 	DrawCard drawCard;
 
-	public void GetCards(){
+	/*public void GetCards(){
 		foreach (int i in cardIdList) {
-			foreach (GameObject j in drawCard.Cards) {
+			foreach (GameObject j in drawCard.Hands) {
 				if (i == j.GetComponent<card_attribute> ().cardNum) {
 					if (cardParent_refrence.transform.parent.childCount <= 6) {
 						cardPrefab = j;
@@ -37,13 +36,12 @@ public class MyTurn : MonoBehaviour {
 			break;
 		}
 
-	}
+	}*/
 
 	// Use this for initialization
 	void Start () {
 		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
-		drawCard = GetComponent<DrawCard> ();
-		Shuffle ();
+		//Shuffle ();
 		parent = cardParent_refrence.transform.parent;
 	}
 
@@ -53,19 +51,19 @@ public class MyTurn : MonoBehaviour {
 	}
 
 	public void checkMyTurn(){
-		    todrawcard();
+		    //todrawcard();
 			this.GetComponent<dice>().throwdice ();
 	}
 		
-	void todrawcard(){
+	/*void todrawcard(){
 		if (cardIdList.Count == 0) {
 			Debug.Log ("沒手牌了");
 		} else {
 			GetCards ();
 		}
-	}
+	}*/
 
-	public void Shuffle(){
+	/*public void Shuffle(){
 		if (cardIdList == null) {
 		     
 			cardIdList = new List<int> ();
@@ -88,6 +86,6 @@ public class MyTurn : MonoBehaviour {
 		}
 
 	}
-
+*/
 
 }

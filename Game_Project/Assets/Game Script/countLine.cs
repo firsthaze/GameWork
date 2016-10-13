@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class countLine : MonoBehaviour {
 	GameObject eventSystem,tmp;
+	public static int mode;    //管理點擊觸發
+	/*
+	 * mode 0: 點擊空白處
+	 *mode 1 : 已經點擊我方怪獸 
+	 */
 	public int monsterDistance,minLine,minHP,atkChance;
 	public bool isATK;
 	private int ourMonsterZ,enemyMonsterZ,ourMonsterAtk,enemyMonsterHp;
 	List<GameObject> target,canATK;
 	Renderer allowAtk;
+	Transform showTarget;
 	// Use this for initialization
 	void Start () {
 		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
@@ -30,7 +37,14 @@ public class countLine : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.transform.tag == "ourMonster") {
+					mode = 1;
+					foreach (GameObject monster in GameObject.FindGameObjectsWithTag("ourMonster")) {
+						showTarget = monster.transform.GetChild (0);
+						showTarget.transform.gameObject.SetActive (false);
+					}
 					tmp = hit.transform.gameObject;
+					showTarget = tmp.transform.GetChild (0);
+					showTarget.transform.gameObject.SetActive (true);
 					if (tmp.GetComponent<recordWhichCard> ().atkChance == 0) {
 						eventSystem.GetComponent<messageController> ().receiveMessage (7);
 					} else if (!isATK) {
@@ -78,12 +92,16 @@ public class countLine : MonoBehaviour {
 						isATK = false;
 						monsterDistance = enemyMonsterZ - ourMonsterZ;
 						tmp.GetComponent<recordWhichCard> ().atkChance--;
+						allowAtk = tmp.GetComponent<Renderer> ();
+						allowAtk.material.color = Color.gray;
 					}
 				} else {
 					foreach (GameObject toAtk in canATK) {
+						mode = 0;
 						allowAtk = toAtk.GetComponent<Renderer> ();
 						allowAtk.material.color = Color.white;
 						toAtk.transform.tag = "enemyMonster";
+						showTarget.transform.gameObject.SetActive (false);
 					}
 					isATK = false;
 				}

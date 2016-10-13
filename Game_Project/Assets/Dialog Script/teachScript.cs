@@ -50,7 +50,7 @@ public class teachScript : MonoBehaviour {
 			nextButton.SetActive (true);
 			break;
 		case 9:
-			teachContext.text = "沒有看仔細的話記得再往前看喔，關掉之後就看不到囉咖酷的說明就到此結束，咖酷下台一鞠躬!";
+			teachContext.text = "沒有看仔細的話可以再往前看喔，就算不小心關掉了也可以在右上角的設定中找到幫助，那麼，咖酷下台一鞠躬!";
 			nextButton.SetActive (false);
 			break;
 		default :
@@ -59,7 +59,7 @@ public class teachScript : MonoBehaviour {
 	}
 
 	public void ClickClose(){
-		Destroy (teachBoard);
+		teachBoard.SetActive (false);
 	}
 
 	public void ClickNext(){

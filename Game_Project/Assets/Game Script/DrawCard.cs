@@ -1,32 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using SocketIO;
+using Newtonsoft.Json;
 
 public class DrawCard : MonoBehaviour {
-	public GameObject kaku;
-	public GameObject johnson;
-	public GameObject shashow;
-
-	public List<GameObject> Cards;
-
+	public GameObject[] cardsObject;
 
 	// Use this for initialization
 	void Start () {
-		Cards = new List<GameObject> ();
-		Cards.Add (kaku);
-		Cards.Add (johnson);
-		Cards.Add (shashow);
 		setcardnum ();
 	}
 
 	void setcardnum(){
-		kaku.GetComponent<card_attribute> ().cardNum = 0;
-		johnson.GetComponent<card_attribute> ().cardNum = 1;
-		shashow.GetComponent<card_attribute> ().cardNum = 2;
+		int i = 0;
+		foreach (GameObject card in cardsObject) {
+			card.GetComponent<card_attribute> ().cardNum = i;
+			i++;
+		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }

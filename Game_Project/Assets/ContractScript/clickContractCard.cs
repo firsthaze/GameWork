@@ -50,12 +50,15 @@ public class clickContractCard : MonoBehaviour {
 		}
 	}
 
-	void OnMouseUp(){
+	void OnMouseDown(){
+		Debug.Log ("CLick the Card!");
 		if (mode == 1) {
+			Debug.Log ("OnMouseDown mode 1");
 			cardNum = eventSystem.GetComponent<reelControl> ().getCardNum();
 			turn = true;
 		}
 		else {
+			Debug.Log ("OnMouseDown mode 2");
 			mode =1;
 			fade.SetActive (false);
 			cardBack.SetActive (true);

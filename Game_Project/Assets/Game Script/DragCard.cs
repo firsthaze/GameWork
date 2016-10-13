@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DragCard : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHandler{
-	public int cardNum;
 	public RectTransform Hand;
 	public Vector3 v3_position;
 	public GameObject summor_Monster;

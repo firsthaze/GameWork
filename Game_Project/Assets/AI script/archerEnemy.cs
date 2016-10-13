@@ -96,6 +96,6 @@ public class archerEnemy : MonoBehaviour {
 
 	IEnumerator toWaite(){
 		yield return new WaitForSeconds (1);
-		allowAtk.material.color = Color.white;
+		allowAtk.material.color = Color.gray;
 	}	
 }

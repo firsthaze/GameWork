@@ -1,45 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
-using SocketIO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 [RequireComponent(typeof(Index))]
 public class ClickFinish : MonoBehaviour {
-	SocketIOComponent user;
-	GameObject socket;
-	JSONObject myHand;
-	List<int> cardIndex;
+	public static List<int> cardIndex;
 	private string passCardIndex;
 	private string token;
+	public GameObject finsihBoard;
 
 	// Use this for initialization
 	void Start () {
 		cardIndex = new List<int> ();
-		myHand = new JSONObject();
-		token = SystemInfo.deviceUniqueIdentifier;
-		myHand.AddField ("token", token);
-		socket = GameObject.FindGameObjectWithTag ("Socket");
-		user = socket.GetComponent<SocketIOComponent> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-
 	}
 
 	public void OnClick(){
 		CollectCard ();
 	}
 
+	public void BackToUI(){
+		SceneLoader.ins.LoadLevel (SceneLoader.Scenes.HomePage);
+	}
+
 	void CollectCard(){
+		cardIndex.Clear ();
 		foreach (GameObject card in GameObject.FindGameObjectsWithTag("myHand")) {
 			Debug.Log ("card is : " + card.GetComponent<card_attribute> ().cardNum);
 			cardIndex.Add(card.GetComponent<card_attribute> ().cardNum);
+			finsihBoard.SetActive (true);
+			StartCoroutine (endBoard ());
 		}
-		passCardIndex = JsonConvert.SerializeObject (cardIndex);
-		myHand.AddField ("myHand", passCardIndex);
-		Debug.Log ("passCardIndex is : " + passCardIndex);
-		user.Emit ("passMyHand", myHand);
+	}
+	IEnumerator endBoard(){
+		yield return new WaitForSeconds (2);
+		finsihBoard.SetActive (false);
 	}
 }

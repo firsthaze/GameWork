@@ -48,7 +48,9 @@
      <Compile Include="Assets\AI Script\archerEnemy.cs" />
      <Compile Include="Assets\AI Script\enemyAttribute.cs" />
      <Compile Include="Assets\AI Script\fighterEnemy.cs" />
+     <Compile Include="Assets\ContractScript\backToHome.cs" />
      <Compile Include="Assets\ContractScript\changePicture.cs" />
+     <Compile Include="Assets\ContractScript\checkStoneNumber.cs" />
      <Compile Include="Assets\ContractScript\chooseReel.cs" />
      <Compile Include="Assets\ContractScript\clickContractCard.cs" />
      <Compile Include="Assets\ContractScript\reelControl.cs" />
@@ -56,7 +58,9 @@
      <Compile Include="Assets\Dialog Script\finishReward.cs" />
      <Compile Include="Assets\Dialog Script\firstChapterInDialog.cs" />
      <Compile Include="Assets\Dialog Script\firstMovie.cs" />
+     <Compile Include="Assets\Dialog Script\move.cs" />
      <Compile Include="Assets\Dialog Script\sceneFade.cs" />
+     <Compile Include="Assets\Dialog Script\setBoard.cs" />
      <Compile Include="Assets\Dialog Script\skipButton.cs" />
      <Compile Include="Assets\Dialog Script\teachScript.cs" />
      <Compile Include="Assets\Dialog Script\victory.cs" />
@@ -75,9 +79,11 @@
      <Compile Include="Assets\Game Script\controllHand.cs" />
      <Compile Include="Assets\Game Script\countLine.cs" />
      <Compile Include="Assets\Game Script\dice.cs" />
+     <Compile Include="Assets\Game Script\displayEnemy.cs" />
      <Compile Include="Assets\Game Script\displayMonster.cs" />
      <Compile Include="Assets\Game Script\end_phase.cs" />
      <Compile Include="Assets\Game Script\enemy_phase.cs" />
+     <Compile Include="Assets\Game Script\gameStart.cs" />
      <Compile Include="Assets\Game Script\maincam.cs" />
      <Compile Include="Assets\Game Script\mana.cs" />
      <Compile Include="Assets\Game Script\messageController.cs" />
@@ -93,9 +99,7 @@
      <Compile Include="Assets\Level Script\checkLevel.cs" />
      <Compile Include="Assets\Level Script\checkUserInfo.cs" />
      <Compile Include="Assets\Level Script\controlLevel.cs" />
-     <Compile Include="Assets\Level Script\level1.cs" />
-     <Compile Include="Assets\Level Script\level2.cs" />
-     <Compile Include="Assets\Level Script\startView.cs" />
+     <Compile Include="Assets\Level Script\levelController.cs" />
      <Compile Include="Assets\Settings\LoadingScene.cs" />
      <Compile Include="Assets\Settings\SceneInitializer.cs" />
      <Compile Include="Assets\Settings\SceneLoader.cs" />

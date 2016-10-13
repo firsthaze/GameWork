@@ -4,9 +4,11 @@ using SocketIO;
 
 public class reelControl : MonoBehaviour {
 	public GameObject showCard;
+	public GameObject eventSystem;
 	public GameObject fade;
 	public GameObject openReel;
 	public GameObject[] reels;
+	public GameObject messageBoard;
 	public float speed;
 	public GameObject particalSystem;
 	private bool isShowCard;
@@ -25,6 +27,7 @@ public class reelControl : MonoBehaviour {
 		userID = new JSONObject ();
 		userID.AddField ("token", token);
 		isShowCard = false;
+		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
 	}
 	
 	// Update is called once per frame
@@ -43,7 +46,14 @@ public class reelControl : MonoBehaviour {
 	}
 
 	public void GoToServer(){
-		goContract ();
+		if (eventSystem.GetComponent<checkStoneNumber> ().stone > 25) {
+			goContract ();
+		}
+		else{
+			messageBoard.SetActive (true);
+			StartCoroutine (spaceTime ());
+			messageBoard.SetActive (false);
+		}
 	}
 
 	public void ChangeAnother(){
@@ -57,9 +67,11 @@ public class reelControl : MonoBehaviour {
 	}
 
 	void goContract(){
-		user.Emit ("Contract", userID);
+			user.Emit ("Contract", userID);
 	}
-
+	IEnumerator spaceTime(){
+		yield return new WaitForSeconds (2);
+	}
 	public void getCardNumber(SocketIOEvent e)
 	{
 		setCardNum ( e.data["cardNum"].f);

@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Level Script\checkUserInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dialog Script\teachScript.cs">
     <Files>
-      <File FileName="Assets\Level Script\checkUserInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Level Script\checkLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Level Script\controlLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog Script\backToUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dialog Script\setBoard.cs" Line="29" Column="1" />
+      <File FileName="Assets\Dialog Script\move.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dialog Script\teachScript.cs" Line="62" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,6 +10,7 @@ public class enemy_phase : MonoBehaviour {
 	GameObject eventSystem;
 	GameObject territoryButton;
 	public int countMonsters,isfinish;
+	Renderer finishActive;
 	// Use this for initialization
 	void Start () {
 		countMonsters = 0;
@@ -50,6 +51,8 @@ public class enemy_phase : MonoBehaviour {
 			buttonEndPhase.GetComponent<Button> ().interactable = true;
 			territoryButton.GetComponent<Button> ().interactable = true;
 			foreach (GameObject tolive in GameObject.FindGameObjectsWithTag ("ourMonster")) {
+				finishActive = tolive.GetComponent<Renderer> ();
+				finishActive.material.color = Color.white;
 				tolive.GetComponent<recordWhichCard> ().atkChance = 1;
 			}
 		}

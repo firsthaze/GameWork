@@ -22,7 +22,7 @@ public class showmasterHP : MonoBehaviour {
 		if (masterHP <= 0) {
 			//可能需要輸掉遊戲的動畫或音效
 			yield return new WaitForSeconds (1);
-			StartCoroutine(eventSystem.GetComponent<victory> ().victoryBoard ());
+			StartCoroutine(eventSystem.GetComponent<victory> ().defeatBoard ());
 		}
 	}
 }
