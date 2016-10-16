@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class archerEnemy : MonoBehaviour {
 	GameObject controller;
 	GameObject eventSystem;
+	GameObject musicControll;
 	Renderer allowAtk;
 	List<GameObject> target,canATK,goATK;
 	int countLine,minLine,minHP,n;
 	bool isActive;
+	bool isAllow;
 	int masterHP;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
+		isAllow = false;
 		controller = GameObject.FindGameObjectWithTag ("controller");
 		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
 		minLine = 50;
@@ -26,12 +30,14 @@ public class archerEnemy : MonoBehaviour {
 	void Update () {
 		isActive = GetComponent<enemyAttribute>().isActive;
 		if (isActive) {
-			starATK ();
+			StartCoroutine(SpaceTime ());
+			if(isAllow)
+				starATK ();
 		}
 	}
 
 	void starATK(){
-
+		isAllow = false;
 		target.Clear ();
 		canATK.Clear ();
 		goATK.Clear ();
@@ -71,7 +77,7 @@ public class archerEnemy : MonoBehaviour {
 				goATK.Add (toATK);
 			}
 		}
-
+		musicControll.GetComponent<musicController> ().ChoiceOneShot (8);
 		if (goATK.Count != 0) {
 			allowAtk = goATK [0].GetComponent<Renderer> ();
 			allowAtk.material.color = Color.red;
@@ -97,5 +103,10 @@ public class archerEnemy : MonoBehaviour {
 	IEnumerator toWaite(){
 		yield return new WaitForSeconds (1);
 		allowAtk.material.color = Color.gray;
-	}	
+	}
+
+	IEnumerator SpaceTime(){
+		yield return new WaitForSeconds (2f);
+		isAllow = true;
+	}
 }

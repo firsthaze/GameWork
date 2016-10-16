@@ -26,7 +26,7 @@ public class teachScript : MonoBehaviour {
 			preButton.SetActive (false);
 			break;
 		case 2:
-			teachContext.text = "首先,Master可以觀看下面的部分,這是兵師的「兵譜」!每個回合兵譜都會補充一張兵棋，上限是6張，兵棋左上是職業別，右上是召喚兵棋需要的魔力，通稱Mana，左下是攻擊力，右下是生命力，劃過去就可以看得更清楚?";
+			teachContext.text = "首先,Master可以觀看下面的部分,這是兵師的「兵譜」!上面有6張兵棋，兵棋的左上角是職業別，右上角是召喚兵棋需要的魔力，通稱Mana，左下是攻擊力，右下是生命力，劃過去就可以看得更清楚?";
 			preButton.SetActive (true);
 			break;
 		case 3:

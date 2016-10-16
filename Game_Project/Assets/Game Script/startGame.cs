@@ -7,8 +7,10 @@ public class startGame : MonoBehaviour {
 	JSONObject newUser;
 	public GameObject socket;
 	SocketIOComponent user;
+	GameObject musicControll;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
 		user = socket.GetComponent<SocketIOComponent> ();
 		DontDestroyOnLoad (socket);
 		token = SystemInfo.deviceUniqueIdentifier;
@@ -22,6 +24,7 @@ public class startGame : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		musicControll.GetComponent<musicController> ().ChoiceOneShot(4);
 		user.Emit ("login", newUser);
 	}
 

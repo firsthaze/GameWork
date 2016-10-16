@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class gameStart : MonoBehaviour {
+	GameObject musicControll;
 	public Vector3 newScale = new Vector3 (1.0f, 1.0f, 1.0f);
 	public GameObject[] cardsObject;
 	public GameObject cardParent_refrence;
@@ -13,6 +14,8 @@ public class gameStart : MonoBehaviour {
 	Transform sceneFade;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
+		musicControll.GetComponent<musicController> ().PlayBackGroundMusic (1);
 		parent = cardParent_refrence.transform.parent;
 		setcardnum ();
 		if (ClickFinish.cardIndex == null) {

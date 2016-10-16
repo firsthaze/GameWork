@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class firstMovie : MonoBehaviour
 {
+	GameObject musicControll;
 	GameObject sceneFade;
 	public Text dialog;
 	int screen;
 	// Use this for initialization
 	void Start ()
 	{
+		musicControll = GameObject.Find ("MusicController");
+		musicControll.GetComponent<musicController> ().PlayBackGroundMusic (5);
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		sceneFade = GameObject.Find ("SceneFade");
 		screen = 0;
@@ -24,6 +27,7 @@ public class firstMovie : MonoBehaviour
 
 	IEnumerator OnMouseDown ()
 	{
+		musicControll.GetComponent<musicController> ().ChoiceOneShot(4);
 		StartCoroutine (sceneFade.GetComponent<sceneFade> ().FadeOut ());
 		yield return new WaitForSeconds (1);
 		if (screen > 3) {

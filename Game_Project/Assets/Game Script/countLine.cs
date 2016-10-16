@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class countLine : MonoBehaviour {
 	GameObject eventSystem,tmp;
+	GameObject musicControll;
 	public static int mode;    //管理點擊觸發
 	/*
 	 * mode 0: 點擊空白處
@@ -18,6 +19,7 @@ public class countLine : MonoBehaviour {
 	Transform showTarget;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
 		eventSystem = GameObject.FindGameObjectWithTag ("eventsystem");
 		isATK = false;
 		minLine = 50;
@@ -32,21 +34,19 @@ public class countLine : MonoBehaviour {
 	}
 
 	void clickMonster(){
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButtonUp(0)) {
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (4);
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.transform.tag == "ourMonster") {
 					mode = 1;
-					foreach (GameObject monster in GameObject.FindGameObjectsWithTag("ourMonster")) {
-						showTarget = monster.transform.GetChild (0);
-						showTarget.transform.gameObject.SetActive (false);
-					}
 					tmp = hit.transform.gameObject;
 					showTarget = tmp.transform.GetChild (0);
 					showTarget.transform.gameObject.SetActive (true);
 					if (tmp.GetComponent<recordWhichCard> ().atkChance == 0) {
 						eventSystem.GetComponent<messageController> ().receiveMessage (7);
+						showTarget.transform.gameObject.SetActive (false);
 					} else if (!isATK) {
 						target.Clear ();
 						canATK.Clear ();
@@ -81,6 +81,7 @@ public class countLine : MonoBehaviour {
 				} else if (hit.transform.tag == "choosen") {
 					if (isATK) {
 						minLine = 50;
+						musicControll.GetComponent<musicController> ().ChoiceOneShot (8);
 						enemyMonsterZ = cor_process (hit.transform.position.z);
 						hit.transform.GetComponent<enemyAttribute> ().HP = hit.transform.GetComponent<enemyAttribute> ().HP - ourMonsterAtk;
 
@@ -101,8 +102,8 @@ public class countLine : MonoBehaviour {
 						allowAtk = toAtk.GetComponent<Renderer> ();
 						allowAtk.material.color = Color.white;
 						toAtk.transform.tag = "enemyMonster";
-						showTarget.transform.gameObject.SetActive (false);
 					}
+					showTarget.transform.gameObject.SetActive (false);
 					isATK = false;
 				}
 			}

@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dialog Script\teachScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game Script\end_phase.cs">
     <Files>
-      <File FileName="Assets\Dialog Script\setBoard.cs" Line="29" Column="1" />
-      <File FileName="Assets\Dialog Script\move.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog Script\teachScript.cs" Line="62" Column="32" />
+      <File FileName="Assets\MusicScript\musicController.cs" Line="51" Column="29" />
+      <File FileName="Assets\Game Script\gameStart.cs" Line="18" Column="74" />
+      <File FileName="Assets\Game Script\end_phase.cs" Line="28" Column="68" />
+      <File FileName="Assets\Game Script\enemy_phase.cs" Line="51" Column="69" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

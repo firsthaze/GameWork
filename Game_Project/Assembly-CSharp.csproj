@@ -100,12 +100,14 @@
      <Compile Include="Assets\Level Script\checkUserInfo.cs" />
      <Compile Include="Assets\Level Script\controlLevel.cs" />
      <Compile Include="Assets\Level Script\levelController.cs" />
+     <Compile Include="Assets\MusicScript\musicController.cs" />
      <Compile Include="Assets\Settings\LoadingScene.cs" />
      <Compile Include="Assets\Settings\SceneInitializer.cs" />
      <Compile Include="Assets\Settings\SceneLoader.cs" />
      <Compile Include="Assets\Settings\SceneManager.cs" />
      <Compile Include="Assets\Settings\SceneNames.cs" />
-     <Compile Include="Assets\Settings\turnLoad.cs" />
+     <Compile Include="Assets\Settings\animate\bigSize.cs" />
+     <Compile Include="Assets\Settings\animate\turnLoad.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\JSONTemplates.cs" />
      <Compile Include="Assets\SocketIO\JSONObject\VectorTemplates.cs" />

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class enemy_phase : MonoBehaviour {
+	public GameObject TurnChange;
+	GameObject musicControll;
 	List<GameObject> Monsters;
 	GameObject[] findMonster;
 	GameObject buttonEndPhase;
@@ -13,6 +15,7 @@ public class enemy_phase : MonoBehaviour {
 	Renderer finishActive;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
 		countMonsters = 0;
 		isfinish = 1;
 		buttonEndPhase = GameObject.Find ("finish_phase");
@@ -30,7 +33,6 @@ public class enemy_phase : MonoBehaviour {
 		    Monsters.Clear ();
 			findMonster = GameObject.FindGameObjectsWithTag ("enemyMonster");
 			foreach (GameObject toMove in findMonster) {
-			    Debug.Log ("enemyMonster is :" + toMove.transform.name);
 				Monsters.Add (toMove);
 				countMonsters++;
 			}
@@ -45,7 +47,9 @@ public class enemy_phase : MonoBehaviour {
 			Debug.Log("進到finish");
 			isfinish = 1;
 			countMonsters = 0;
-			yield return new WaitForSeconds (2);
+			yield return new WaitForSeconds (2.5f);
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (9);
+			StartCoroutine(ShowTurnChange ());
 			eventSystem.GetComponent<messageController> ().receiveMessage(1);
 			this.GetComponent<end_phase> ().ismyturn = true;
 			buttonEndPhase.GetComponent<Button> ().interactable = true;
@@ -56,5 +60,19 @@ public class enemy_phase : MonoBehaviour {
 				tolive.GetComponent<recordWhichCard> ().atkChance = 1;
 			}
 		}
+	}
+
+	IEnumerator ShowTurnChange(){
+		Debug.Log ("InShowTurnChange");
+		TurnChange.SetActive (true);
+		yield return new WaitForSeconds (1.5f);
+		TurnChange.SetActive (false);
+		Debug.Log ("InShowTurnChangeFinish");
+	}
+
+	IEnumerator SpaceTime(){
+		Debug.Log ("InspaceTime");
+		yield return new WaitForSeconds (1.5f);
+		Debug.Log ("InspaceTimefinish");
 	}
 }
