@@ -4,8 +4,10 @@ using System.Collections;
 public class enemyAttribute : MonoBehaviour {
 	public int HP, ATK,cost;
 	public bool isActive;
+	GameObject musicControll;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
 		isActive = false;
 	}
 	
@@ -17,8 +19,10 @@ public class enemyAttribute : MonoBehaviour {
 		if (HP <= 0) {
 			if (this.gameObject.transform.name == "Emperor")
 				HP = 0;
-			else
+			else {
+				musicControll.GetComponent<musicController> ().ChoiceOneShot (13);
 				Destroy (this.gameObject);
+			}
 		}
 	}
 }

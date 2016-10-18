@@ -46,6 +46,7 @@ public class countLine : MonoBehaviour {
 					showTarget.transform.gameObject.SetActive (true);
 					if (tmp.GetComponent<recordWhichCard> ().atkChance == 0) {
 						eventSystem.GetComponent<messageController> ().receiveMessage (7);
+						showTarget = tmp.transform.GetChild (0);
 						showTarget.transform.gameObject.SetActive (false);
 					} else if (!isATK) {
 						target.Clear ();
@@ -95,6 +96,8 @@ public class countLine : MonoBehaviour {
 						tmp.GetComponent<recordWhichCard> ().atkChance--;
 						allowAtk = tmp.GetComponent<Renderer> ();
 						allowAtk.material.color = Color.gray;
+						showTarget = tmp.transform.GetChild (0);
+						showTarget.transform.gameObject.SetActive (false);
 					}
 				} else {
 					foreach (GameObject toAtk in canATK) {

@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game Script\end_phase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ContractScript\reelControl.cs">
     <Files>
-      <File FileName="Assets\MusicScript\musicController.cs" Line="51" Column="29" />
-      <File FileName="Assets\Game Script\gameStart.cs" Line="18" Column="74" />
-      <File FileName="Assets\Game Script\end_phase.cs" Line="28" Column="68" />
-      <File FileName="Assets\Game Script\enemy_phase.cs" Line="51" Column="69" />
+      <File FileName="Assets\ContractScript\reelControl.cs" Line="62" Column="34" />
+      <File FileName="Assets\MusicScript\musicController.cs" Line="25" Column="14" />
+      <File FileName="Assets\ContractScript\clickContractCard.cs" Line="58" Column="68" />
+      <File FileName="Assets\ContractScript\chooseReel.cs" Line="21" Column="68" />
+      <File FileName="Assets\ContractScript\checkStoneNumber.cs" Line="29" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

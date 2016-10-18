@@ -30,6 +30,7 @@ public class end_phase : MonoBehaviour {
     }
 
 	public void OnClickToDo(){
+		eventSystem.GetComponent<controllHand> ().shrink ();
 		StartCoroutine(ShowTurnChange ());
 		foreach (GameObject Monster in GameObject.FindGameObjectsWithTag ("ourMonster")){
 			finishActive = Monster.GetComponent<Renderer> ();

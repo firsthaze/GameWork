@@ -18,6 +18,11 @@ public class musicController : MonoBehaviour {
 	 * 8:攻擊音效
 	 * 9:轉換回合
 	 * 10:勝利音效
+	 * 11:失敗音效
+	 * 12:得到卡音效
+	 * 13:死亡音效
+	 * 14:抽卡音效
+	 * 15:抽卡背景音效
 	 */
 
 	public static musicController ins;
@@ -48,20 +53,19 @@ public class musicController : MonoBehaviour {
 		StartCoroutine(TurnOffMusic ());
 		myAudioSource.clip = musics [musicClip];
 		myAudioSource.Play ();
-		myAudioSource.volume = 0.5f;
+		myAudioSource.volume = 0.7f;
 		myAudioSource.loop = true;
 	}
 
-	IEnumerator TurnOffMusic(){
+	public IEnumerator TurnOffMusic(){
 		while (myAudioSource.volume > 0.01)
 			myAudioSource.volume -= speed * 0.01f;
 		myAudioSource.volume = 0;
 		yield return new WaitForSeconds (0.5f);
 	}
-		
 
 	public void ChoiceOneShot(int musicClip){
 		musicEffect.clip = musics [musicClip];
-		musicEffect.PlayOneShot (musicEffect.clip, 1f);
+		musicEffect.PlayOneShot (musicEffect.clip, 2f);
 	}
 }

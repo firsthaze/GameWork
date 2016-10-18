@@ -26,7 +26,7 @@ public class checkStoneNumber : MonoBehaviour {
 		user.On ("getMyStone", getMyStone);
 	}
 
-	void checkMyStone(){
+	public void checkMyStone(){
 		user.Emit ("checkStone", newUser);
 	}
 	void getMyStone(SocketIOEvent e){

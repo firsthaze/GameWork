@@ -59,6 +59,7 @@ public class enemy_phase : MonoBehaviour {
 				finishActive.material.color = Color.white;
 				tolive.GetComponent<recordWhichCard> ().atkChance = 1;
 			}
+			eventSystem.GetComponent<controllHand> ().expansion ();
 		}
 	}
 

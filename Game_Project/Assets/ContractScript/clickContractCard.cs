@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class clickContractCard : MonoBehaviour {
+	GameObject musicControll;
 	public GameObject[] card;
 	public GameObject cardBack;
 	public GameObject wholeCard;
@@ -16,6 +17,7 @@ public class clickContractCard : MonoBehaviour {
 	Transform scenefade;
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find("MusicController");
 		turn = false;
 		turnRight = false;
 		mode = 1;
@@ -53,12 +55,14 @@ public class clickContractCard : MonoBehaviour {
 	void OnMouseDown(){
 		Debug.Log ("CLick the Card!");
 		if (mode == 1) {
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (12);
 			Debug.Log ("OnMouseDown mode 1");
 			cardNum = eventSystem.GetComponent<reelControl> ().getCardNum();
 			turn = true;
 		}
 		else {
 			Debug.Log ("OnMouseDown mode 2");
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (4);
 			mode =1;
 			fade.SetActive (false);
 			cardBack.SetActive (true);

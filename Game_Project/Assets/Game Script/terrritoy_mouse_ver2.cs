@@ -12,10 +12,6 @@ public class terrritoy_mouse_ver2 : MonoBehaviour {
 	private bool _isexist; //不能同地點建造的開關
 	GameObject newcreate_tower;
 
-
-
-
-
 	// Use this for initialization
 	void Start () {
 		flag = false;
@@ -37,9 +33,10 @@ public class terrritoy_mouse_ver2 : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				if (Physics.Raycast (ray, out hit)) {
 					if (hit.collider.tag == "tower") {
-						Debug.Log("hit the same site");
-					} 
-
+						Debug.Log ("hit the same site");
+					} else if (hit.collider.tag == "zone") {
+						Debug.Log ("Click the Zone");
+					}
 					else if (hit.collider.tag == "altar") {
 						Debug.Log("hit the altar");
 					} 

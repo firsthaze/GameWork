@@ -18,9 +18,12 @@ public class reelControl : MonoBehaviour {
 	JSONObject userID;
 	GameObject socket;
 	SocketIOComponent user;
+	GameObject musicControll;
 
 	// Use this for initialization
 	void Start () {
+		musicControll = GameObject.Find ("MusicController");
+		musicControll.GetComponent<musicController> ().PlayBackGroundMusic (15);
 		socket = GameObject.FindGameObjectWithTag ("Socket");
 		user = socket.GetComponent<SocketIOComponent> ();
 		token = SystemInfo.deviceUniqueIdentifier;
@@ -46,17 +49,23 @@ public class reelControl : MonoBehaviour {
 	}
 
 	public void GoToServer(){
-		if (eventSystem.GetComponent<checkStoneNumber> ().stone > 25) {
+		Debug.Log ("onCLick");
+		if (eventSystem.GetComponent<checkStoneNumber> ().stone >= 25) {
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (14);
+			Debug.Log ("in go Contract");
+			eventSystem.GetComponent<checkStoneNumber> ().checkMyStone ();
 			goContract ();
 		}
 		else{
+			Debug.Log ("show board");
+			musicControll.GetComponent<musicController> ().ChoiceOneShot (4);
 			messageBoard.SetActive (true);
-			StartCoroutine (spaceTime ());
-			messageBoard.SetActive (false);
+			openReel.SetActive (false);
 		}
 	}
 
 	public void ChangeAnother(){
+		musicControll.GetComponent<musicController> ().ChoiceOneShot (4);
 		foreach (GameObject reel in reels) {
 			reel.SetActive (true);
 			reelCollider = reel.GetComponent<BoxCollider2D> ();
@@ -67,7 +76,7 @@ public class reelControl : MonoBehaviour {
 	}
 
 	void goContract(){
-			user.Emit ("Contract", userID);
+		user.Emit ("Contract", userID);
 	}
 	IEnumerator spaceTime(){
 		yield return new WaitForSeconds (2);
@@ -83,6 +92,12 @@ public class reelControl : MonoBehaviour {
 	void setCardNum(float cardNumber){
 		setCardNumber = (int)cardNumber;
 		Debug.Log ("setCardNumber is :" + setCardNumber);
+	}
+
+	public void MessageBoardOnclick(){
+		musicControll.GetComponent<musicController> ().ChoiceOneShot (4);
+		ChangeAnother ();
+		messageBoard.SetActive (false);
 	}
 
 	public int getCardNum(){
